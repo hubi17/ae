@@ -1,3 +1,25 @@
 1. alle schueler, mit namen und vornamen, die ueber 18 jahre alt sind.
 
-	SELECT s.vorname, s.nachname FROM schueler s where DATEDIFF(CURDATE(), s.geburtsdatum) >= 6556;
+	SELECT s.vorname, s.nachname
+	FROM schueler s
+	WHERE DATEDIFF(CURDATE(), s.geburtsdatum) >= 6556;
+
+2. alle schueler, mit namen und vornamen, die eine note 5 oder schlechter geschrieben haben, mit ausgabe des faches und der note.
+
+	SELECT s.vorname, s.nachname, l.fach, lw.note
+	FROM schueler s, leistung l, leistungsnachweis lw
+	WHERE lw.sid = s.sid
+	AND lw.lid = l.lid
+	AND lw.note >= 5;
+
+3. alle schueler, mit namen, vornamen, geburtsdatum, in der klasse FSI1, jahrgang 2011-12, mit noten besser als 3, die ueber 18 jahre alt sind
+
+	SELECT s.vorname, s.nachname, s.geburtsdatum, l.fach, lw.note, k.bezeichnung, k.jahrgang
+	FROM schueler s, leistung l, leistungsnachweis lw, klasse k, schuelerklasse sk
+	WHERE lw.sid = s.sid
+	AND lw.lid = l.lid
+	AND s.sid = sk.sid
+	AND k.kid = sk.kid
+	AND k.bezeichnung = 'FSI1'
+	AND k.jahrgang = '2011-12'
+	AND lw.note <= 3 AND DATEDIFF(CURDATE(), s.geburtsdatum) >= 6556;

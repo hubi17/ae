@@ -1,2 +1,3 @@
 1. alle schueler, mit namen und vornamen, die ueber 18 jahre alt sind.
-
+2. alle schueler, mit namen und vornamen, die eine note 5 oder schlechter geschrieben haben, mit ausgabe des faches und der note.
+3. alle schueler, mit namen, vornamen, geburtsdatum, in der klasse FSI1, jahrgang 2011-12, mit noten besser als 3, die ueber 18 jahre alt sind
