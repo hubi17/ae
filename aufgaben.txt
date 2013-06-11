@@ -1,0 +1,2 @@
+1. alle schueler, mit namen und vornamen, die ueber 18 jahre alt sind.
+

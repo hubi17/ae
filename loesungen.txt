@@ -1,2 +1,3 @@
-# alter ueber 18
-SELECT s.vorname, s.nachname FROM schueler s where DATEDIFF(CURDATE(), s.geburtsdatum) >= 6556;
+1. alle schueler, mit namen und vornamen, die ueber 18 jahre alt sind.
+
+	SELECT s.vorname, s.nachname FROM schueler s where DATEDIFF(CURDATE(), s.geburtsdatum) >= 6556;
